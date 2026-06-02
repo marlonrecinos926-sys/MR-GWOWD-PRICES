@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mr Good Prices</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #050505;
+    color: white;
+}
+
+.hero {
+    min-height: 100vh;
+    background:
+        linear-gradient(rgba(0,0,0,.55), rgba(0,0,0,.9)),
+        url("https://images.unsplash.com/photo-1511512578047-dfb367046420?auto=format&fit=crop&w=1600&q=80");
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 30px;
+}
+
+.hero h1 {
+    font-size: 70px;
+    color: #ffd700;
+    text-shadow: 0 0 25px #ff9900;
+    animation: glow 2s infinite alternate;
+}
+
+.hero p {
+    font-size: 24px;
+    margin-top: 15px;
+    color: #ddd;
+}
+
+.btn {
+    display: inline-block;
+    margin-top: 30px;
+    padding: 15px 35px;
+    background: linear-gradient(45deg, gold, orange);
+    color: black;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 50px;
+    box-shadow: 0 0 25px gold;
+    transition: .3s;
+}
+
+.btn:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 45px orange;
+}
+
+@keyframes glow {
+    from { text-shadow: 0 0 15px gold; }
+    to { text-shadow: 0 0 40px orange; }
+}
+
+section {
+    padding: 70px 8%;
+}
+
+.title {
+    text-align: center;
+    font-size: 42px;
+    color: gold;
+    margin-bottom: 40px;
+}
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 25px;
+}
+
+.card {
+    background: linear-gradient(145deg, #111, #1c1c1c);
+    border: 1px solid #333;
+    border-radius: 18px;
+    padding: 25px;
+    text-align: center;
+    box-shadow: 0 0 20px rgba(255,215,0,.15);
+    transition: .4s;
+    position: relative;
+    overflow: hidden;
+}
+
+.card:hover {
+    transform: translateY(-12px) scale(1.03);
+    border-color: gold;
+    box-shadow: 0 0 35px rgba(255,215,0,.5);
+}
+
+.card::before {
+    content: "";
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(transparent, rgba(255,215,0,.2), transparent);
+    transform: rotate(25deg);
+    transition: .6s;
+    opacity: 0;
+}
+
+.card:hover::before {
+    opacity: 1;
+    animation: shine 1.2s linear;
+}
+
+@keyframes shine {
+    from { transform: translateX(-100%) rotate(25deg); }
+    to { transform: translateX(100%) rotate(25deg); }
+}
+
+.card h3 {
+    color: #ffd700;
+    font-size: 28px;
+    margin-bottom: 10px;
+}
+
+.price {
+    font-size: 36px;
+    margin: 20px 0;
+    color: #00ff99;
+    font-weight: bold;
+}
+
+.buy {
+    padding: 12px 25px;
+    border: none;
+    border-radius: 30px;
+    background: gold;
+    color: black;
+    font-weight: bold;
+    cursor: pointer;
+    transition: .3s;
+}
+
+.buy:hover {
+    background: orange;
+    transform: scale(1.1);
+}
+
+.banner {
+    background:
+        linear-gradient(rgba(0,0,0,.6), rgba(0,0,0,.8)),
+        url("https://images.unsplash.com/photo-1542751371-adc38448a05e?auto=format&fit=crop&w=1600&q=80");
+    background-size: cover;
+    background-position: center;
+    text-align: center;
+}
+
+.contact {
+    text-align: center;
+    background: #0b0b0b;
+}
+
+.contact p {
+    font-size: 22px;
+    margin: 12px;
+}
+
+footer {
+    text-align: center;
+    padding: 25px;
+    background: #000;
+    color: #aaa;
+}
+</style>
+</head>
+
+<body>
+
+<div class="hero">
+    <div>
+        <h1>Mr Good Prices</h1>
+        <p>WoW Boosts • Mythic+ Runs • Mount Farming</p>
+        <a href="#boosts" class="btn">Ver Precios</a>
+    </div>
+</div>
+
+<section id="boosts">
+    <h2 class="title">Mythic+ Boosts</h2>
+
+    <div class="cards">
+        <div class="card">
+            <h3>+12 x10</h3>
+            <p>Pack de 10 runs nivel +12</p>
+            <div class="price">$35</div>
+            <button class="buy">Comprar</button>
+        </div>
+
+        <div class="card">
+            <h3>+10 x10</h3>
+            <p>Pack de 10 runs nivel +10</p>
+            <div class="price">$30</div>
+            <button class="buy">Comprar</button>
+        </div>
+
+        <div class="card">
+            <h3>+8 x10</h3>
+            <p>Pack de 10 runs nivel +8</p>
+            <div class="price">$25</div>
+            <button class="buy">Comprar</button>
+        </div>
+
+        <div class="card">
+            <h3>+6 x10</h3>
+            <p>Pack económico de 10 runs</p>
+            <div class="price">$20</div>
+            <button class="buy">Comprar</button>
+        </div>
+    </div>
+</section>
+
+<section class="banner">
+    <h2 class="title">Mount Runs</h2>
+
+    <div class="cards">
+        <div class="card">
+            <h3>16 Runs x8</h3>
+            <p>Ideal para farmear montura</p>
+            <div class="price">$80</div>
+            <button class="buy">Comprar</button>
+        </div>
+
+        <div class="card">
+            <h3>8 Runs x8</h3>
+            <p>Opción intermedia</p>
+            <div class="price">$45</div>
+            <button class="buy">Comprar</button>
+        </div>
+
+        <div class="card">
+            <h3>4 Runs x8</h3>
+            <p>Opción rápida</p>
+            <div class="price">$25</div>
+            <button class="buy">Comprar</button>
+        </div>
+    </div>
+</section>
+
+<section class="contact">
+    <h2 class="title">Contacto</h2>
+    <p>Discord: TU_DISCORD</p>
+    <p>Battle.net: TU_BTAG</p>
+    <p>Atención rápida y buenos precios</p>
+</section>
+
+<footer>
+    © 2026 Mr Good Prices — WoW Services
+</footer>
+
+</body>
+</html>
